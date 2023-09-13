@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Cart : MonoBehaviour
 {
@@ -16,11 +17,15 @@ public class Cart : MonoBehaviour
 	[SerializeField] private int energySupply = 2000;
 	[SerializeField] private int energyRechargeDelay = 100;
 	[FormerlySerializedAs("energyRecharge")] [SerializeField] private int energyRechargeRate = 100;
-	[SerializeField] private int boostEnergyConsumption = 1;
+	[SerializeField] private Vector3 initialBoostVector = new Vector3(0, 1, 10000);
+	[SerializeField] private int initialBoostEnergyConsumption = 20;
+	[SerializeField] private float continuousBoostForce = 10;
+	[SerializeField] private int continuousBoostEnergyConsumption = 1;
+	[SerializeField] private float directionalBoostForce = 1000;
 	private int _currentEnergy;
+	private int _rechargeDelayTimeout;
+	private EngineState _engineState = EngineState.Recharging;
 
-
-	[SerializeField] private float boostForce = 10;
 	private bool _isBoosting = false;
 	private bool _isRecharging = true;
 
@@ -39,14 +44,15 @@ public class Cart : MonoBehaviour
 		ResetRotation = transform.rotation;
 		_rigidbody = GetComponent<Rigidbody>();
 		_currentEnergy = energySupply;
+		_rechargeDelayTimeout = energyRechargeDelay;
 	}
 
-	public void OnMove(InputValue inputValue)
+	public void OnMove(InputAction.CallbackContext ctx)
 	{
-		_direction = inputValue.Get<Vector2>();
+		_direction = ctx.ReadValue<Vector2>();
 	}
 	
-	public void OnReset()
+	public void OnReset(InputAction.CallbackContext ctx)
 	{
 		transform.position = ResetPosition;
 		transform.rotation = ResetRotation;
@@ -56,7 +62,7 @@ public class Cart : MonoBehaviour
 	
 	private void FixedUpdate()
 	{
-		//Debug.Log(_currentEnergy);
+		Debug.Log(_currentEnergy);
 		var acceleration = _direction.y;
 		if (acceleration > 0) {
 			acceleration = speed;
@@ -64,20 +70,27 @@ public class Cart : MonoBehaviour
 			acceleration = -BackwardSpeed;
 		}
 
-		if (_isBoosting)
+		switch (_engineState)
 		{
-				_currentEnergy -= boostEnergyConsumption;
-				_rigidbody.AddForce(transform.TransformDirection(Vector3.forward * boostForce));
-			if (_currentEnergy <= 0) {
-				_isBoosting = false;
-				_currentEnergy = 0;
-				StartRecharge();
-			}
-		}
-
-		if (_isRecharging && _currentEnergy < energySupply) 
-		{
-			_currentEnergy += energyRechargeRate;
+			case EngineState.Recharging:
+				_currentEnergy = Math.Min(_currentEnergy + energyRechargeRate, energySupply);
+				break;
+			case EngineState.RechargeDelay:
+				if (--_rechargeDelayTimeout == 0)
+					_engineState = EngineState.Recharging;
+				break;
+			case EngineState.Boost:
+				if (_currentEnergy > 0)
+				{
+					_currentEnergy -= continuousBoostEnergyConsumption;
+					_rigidbody.AddForce(transform.TransformDirection(Vector3.forward * continuousBoostForce));
+				}
+				if (_currentEnergy <= 0)
+				{
+					_currentEnergy = 0;
+					_engineState = EngineState.RechargeDelay;
+				}
+				break;
 		}
 
 		var steering = _direction.x * maxSteeringAngle;
@@ -103,16 +116,27 @@ public class Cart : MonoBehaviour
 		}
 	}
 
-	public void OnBoost(InputValue value)
+	public void OnBoost(InputAction.CallbackContext ctx)
 	{
-		_isBoosting = value.isPressed;
-		if (_isBoosting)
+		switch (ctx.phase)
 		{
-			_isRecharging = false;
-		}
-		else
-		{
-			StartRecharge();
+			case InputActionPhase.Canceled:
+				if (_engineState == EngineState.Boost)
+					_engineState = EngineState.RechargeDelay;
+				break;
+			case InputActionPhase.Started:
+				if (_currentEnergy > 0)
+				{
+					_rigidbody.AddForce(
+						transform.TransformDirection(
+							initialBoostVector + Vector3.right * _direction.x * directionalBoostForce
+							));
+					_currentEnergy = Math.Max(_currentEnergy - initialBoostEnergyConsumption, 0);
+					_rechargeDelayTimeout = energyRechargeDelay;
+					_engineState = _currentEnergy > 0 ? 
+						EngineState.Boost : EngineState.RechargeDelay;
+				}
+				break;
 		}
 	}
 
@@ -147,4 +171,11 @@ public class AxleInfo
 	public bool IsSteering => isSteering;
 
 	public bool IsReverseSteering => isReverseSteering;
+}
+
+public enum EngineState
+{
+	Boost,
+	RechargeDelay,
+	Recharging
 }

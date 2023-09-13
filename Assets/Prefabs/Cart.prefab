@@ -484,9 +484,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021615de737d6df46a093d8b1c53b45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 300
-  boostForce: 20000
-  MAX_STEERING_ANGLE: 35
+  speed: 300
+  energySupply: 200
+  energyRechargeDelay: 75
+  energyRechargeRate: 10
+  initialBoostVector: {x: 0, y: 50000, z: 800000}
+  initialBoostEnergyConsumption: 40
+  continuousBoostForce: 5000
+  continuousBoostEnergyConsumption: 1
+  directionalBoostForce: 500000
+  maxSteeringAngle: 60
   axles:
   - leftWheel: {fileID: 3556390781738789339}
     rightWheel: {fileID: 1758494296388685824}
@@ -495,7 +502,7 @@ MonoBehaviour:
     isReverseSteering: 0
   - leftWheel: {fileID: 1949526538793171650}
     rightWheel: {fileID: 4261684860664224254}
-    isMotor: 1
+    isMotor: 0
     isSteering: 0
     isReverseSteering: 0
 --- !u!1 &3964676856676462834

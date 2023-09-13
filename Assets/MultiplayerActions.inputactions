@@ -40,6 +40,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "BoostPlayer1",
+                    "type": "Button",
+                    "id": "097f29b7-8d5a-4375-aa60-bb4568cf1abe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=2)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BoostPlayer2",
+                    "type": "Button",
+                    "id": "ccf0e7ed-28ed-48f8-84fa-c755356aad62",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2),Hold",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -172,6 +190,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ResetPlayer2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "262b9e5f-70a1-43ef-abce-6da99f9f8074",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BoostPlayer1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9207ac21-37ca-4955-a412-4ebbd9320a77",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BoostPlayer2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

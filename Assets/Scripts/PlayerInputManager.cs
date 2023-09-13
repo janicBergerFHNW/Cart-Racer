@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,5 +27,16 @@ public class PlayerInputManager : MonoBehaviour
     public void OnResetPlayer2()
     {
         player2.OnReset();
+    }
+
+    public void OnBoostPlayer1(InputValue value)
+    {
+        Debug.Log(value.Get());
+        player1.OnBoost(value);
+    }
+
+    public void OnBoostPlayer2(InputValue value)
+    {
+        player2.OnBoost(value);
     }
 }

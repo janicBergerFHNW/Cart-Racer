@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(128, 128, 128, 0.67);">
+        <ui:Label tabindex="-1" text="Cart Editor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" style="align-self: center; font-size: 46px; -unity-font-style: bold;" />
+        <ui:VisualElement name="Content" style="flex-grow: 1;">
+            <ui:VisualElement name="PreviewArea" style="flex-grow: 1; background-color: rgba(127, 127, 127, 0);" />
+            <ui:VisualElement name="EditArea" style="flex-grow: 0; margin-right: 30%; margin-left: 30%;">
+                <ui:SliderInt picking-mode="Ignore" label="Power" value="200" high-value="250" name="Power" low-value="50" show-input-field="true" />
+                <ui:SliderInt picking-mode="Ignore" label="Steering" value="35" high-value="80" name="Steering" low-value="10" show-input-field="true" />
+                <ui:SliderInt picking-mode="Ignore" label="Weight" value="1000" high-value="2500" name="Weight" low-value="100" show-input-field="true" />
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                    <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" />
+                    <ui:Button text="Confirm" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ConfirmButton" style="justify-content: flex-start;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

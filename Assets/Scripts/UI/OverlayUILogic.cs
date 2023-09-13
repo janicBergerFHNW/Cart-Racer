@@ -1,18 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
-public class OverlayUILogic : MonoBehaviour
+namespace UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class OverlayUILogic : MonoBehaviour
     {
-        
-    }
+        private const string MainMenuButtonName = "MainMenu";
+        private const string EditCartButtonName = "EditCart";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public event EventHandler EditCartButtonPressed;
+
+        protected virtual void OnEditCartButtonPressed()
+        {
+            EditCartButtonPressed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private UIDocument _overlayDocument;
+
+        private void OnEnable()
+        {
+            _overlayDocument = GetComponent<UIDocument>();
+            
+            _overlayDocument.rootVisualElement.Q<Button>(MainMenuButtonName).clicked += () =>
+            {
+                Debug.Log("Main clicked");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            };
+            
+            _overlayDocument.rootVisualElement.Q<Button>(EditCartButtonName).clicked += () =>
+            {
+                Debug.Log("Edit clicked");
+                OnEditCartButtonPressed();
+            };
+        }
     }
 }

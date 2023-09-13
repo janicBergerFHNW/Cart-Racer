@@ -27,12 +27,7 @@ public class Cart : MonoBehaviour
 	{
 		_direction = inputValue.Get<Vector2>();
 	}
-
-	void OnPlayerJoined()
-	{
-		Debug.Log("Joined");
-	}
-
+	
 	public void OnReset()
 	{
 		transform.position = ResetPosition;

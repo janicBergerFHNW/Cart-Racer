@@ -865,6 +865,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6354100409796506234, guid: 97d039d95791b5b4788cc430a5ac4145, type: 3}
   m_PrefabInstance: {fileID: 1212198190}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &446995687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5612686911899563521, guid: 97d039d95791b5b4788cc430a5ac4145, type: 3}
+  m_PrefabInstance: {fileID: 1212198190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021615de737d6df46a093d8b1c53b45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &481942566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2131431080829321027, guid: 23f215e1924d7f54c85804e9863bc699, type: 3}
@@ -2041,7 +2052,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 96412662825873342}
         m_TargetAssemblyTypeName: Cart, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -2057,7 +2068,7 @@ MonoBehaviour:
     m_ActionName: Player/MovePlayer1[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 446995687}
         m_TargetAssemblyTypeName: Cart, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -2073,7 +2084,7 @@ MonoBehaviour:
     m_ActionName: Player/MovePlayer2[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 96412662825873342}
         m_TargetAssemblyTypeName: Cart, Assembly-CSharp
         m_MethodName: OnReset
         m_Mode: 0
@@ -2089,7 +2100,7 @@ MonoBehaviour:
     m_ActionName: Player/ResetPlayer1[/Keyboard/r]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 446995687}
         m_TargetAssemblyTypeName: Cart, Assembly-CSharp
         m_MethodName: OnReset
         m_Mode: 0
@@ -2105,7 +2116,7 @@ MonoBehaviour:
     m_ActionName: Player/ResetPlayer2[/Keyboard/l]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 96412662825873342}
         m_TargetAssemblyTypeName: Cart, Assembly-CSharp
         m_MethodName: OnBoost
         m_Mode: 0
@@ -2121,7 +2132,7 @@ MonoBehaviour:
     m_ActionName: Player/BoostPlayer1[/Keyboard/leftCtrl]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 446995687}
         m_TargetAssemblyTypeName: Cart, Assembly-CSharp
         m_MethodName: OnBoost
         m_Mode: 0
@@ -3255,6 +3266,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6794979929921107765, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
   m_PrefabInstance: {fileID: 5230865897705902475}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &96412662825873342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5442203864328532814, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+  m_PrefabInstance: {fileID: 5230865897705902475}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021615de737d6df46a093d8b1c53b45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &775442991872502389
 PrefabInstance:
   m_ObjectHideFlags: 0

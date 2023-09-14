@@ -26,9 +26,6 @@ public class Cart : MonoBehaviour
 	private int _rechargeDelayTimeout;
 	private EngineState _engineState = EngineState.Recharging;
 
-	private bool _isBoosting = false;
-	private bool _isRecharging = true;
-
 	private float BackwardSpeed => speed * 0.7f;
 
 	[FormerlySerializedAs("MAX_STEERING_ANGLE")] [SerializeField]
@@ -62,7 +59,7 @@ public class Cart : MonoBehaviour
 	
 	private void FixedUpdate()
 	{
-		Debug.Log(_currentEnergy);
+		//Debug.Log(_currentEnergy);
 		var acceleration = _direction.y;
 		if (acceleration > 0) {
 			acceleration = speed;
@@ -118,6 +115,7 @@ public class Cart : MonoBehaviour
 
 	public void OnBoost(InputAction.CallbackContext ctx)
 	{
+		Debug.Log(ctx.phase);
 		switch (ctx.phase)
 		{
 			case InputActionPhase.Canceled:
@@ -140,17 +138,6 @@ public class Cart : MonoBehaviour
 		}
 	}
 
-	private void StartRecharge()
-	{
-		//Debug.Log("start recharge delay");
-		Invoke(nameof(Recharge), energyRechargeDelay);
-	}
-	
-	private void Recharge()
-	{
-		Debug.Log("recharging");
-		_isRecharging = true;
-	}
 }
 
 [Serializable]

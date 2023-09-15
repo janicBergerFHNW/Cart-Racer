@@ -17,7 +17,7 @@ namespace UI
         private const string EditCartButtonName = "EditCartButton";
         private const string QuitButtonName = "QuitButton";
 
-        [SerializeField] private GameObject[] _previews;
+        //[SerializeField] private GameObject[] _previews;
         
         public event EventHandler EditCartButtonPressed;
 
@@ -39,11 +39,11 @@ namespace UI
 
             DropdownField dropdown = _mainMenuUIDocument.rootVisualElement.Q<DropdownField>();
             
-            _previews[dropdown.index].SetActive(true);
+//            _previews[dropdown.index].SetActive(true);
             dropdown.RegisterValueChangedCallback(v =>
             {
                 disablePreviews();
-                _previews[dropdown.index].SetActive(true);
+//                _previews[dropdown.index].SetActive(true);
             });
             
 
@@ -73,10 +73,10 @@ namespace UI
 
         private void disablePreviews()
         {
-            foreach (var preview in _previews)
+/*            foreach (var preview in _previews)
             {
                 preview.SetActive(false);
             }
-        }
+*/        }
     }
 }

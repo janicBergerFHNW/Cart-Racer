@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Post
   - Preview
+  - OnBoostStart
   layers:
   - Default
   - TransparentFX

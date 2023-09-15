@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6914923471023676418, guid: 00740ec3cefd85b49b43921a01f2b0df, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 120911554865650127, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -51,6 +47,30 @@ PrefabInstance:
     - target: {fileID: 4199270858272066629, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
       propertyPath: m_Color.r
       value: 0.0627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068210093709705660, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068210093709705660, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.57053983
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068210093709705660, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.12549019
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082351977343490277, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082351977343490277, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082351977343490277, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.1254902
       objectReference: {fileID: 0}
     - target: {fileID: 6794979929921107765, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
       propertyPath: m_LocalPosition.x
@@ -102,6 +122,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7447273674132121821, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6914923471023676418, guid: 00740ec3cefd85b49b43921a01f2b0df, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

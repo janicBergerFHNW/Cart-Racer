@@ -8,12 +8,24 @@ using Random = UnityEngine.Random;
 
 public class Cart : MonoBehaviour
 {
+	public class EngineStateChangeEventArgs
+	{
+		public EngineState EngineState;
+	}
+
 	public Vector3 ResetPosition { get; set; }
 	public Quaternion ResetRotation { get; set; }
 	private Vector2 _direction;
+	[Header("Cart")]
 	[FormerlySerializedAs("_speed")] [SerializeField]
 	private float speed = 80.0f;
-
+	[FormerlySerializedAs("MAX_STEERING_ANGLE")] [SerializeField]
+	private float maxSteeringAngle = 45;
+	[SerializeField] private List<AxleInfo> axles;
+	[SerializeField] private float aerialRotationForce = 1000;
+	
+	[Space]
+	[Header("Boost")]
 	[SerializeField] private int energySupply = 2000;
 	[SerializeField] private int energyRechargeDelay = 100;
 	[FormerlySerializedAs("energyRecharge")] [SerializeField] private int energyRechargeRate = 100;
@@ -24,14 +36,28 @@ public class Cart : MonoBehaviour
 	[SerializeField] private float directionalBoostForce = 1000;
 	private int _currentEnergy;
 	private int _rechargeDelayTimeout;
-	private EngineState _engineState = EngineState.Recharging;
+	private EngineState _engineState = EngineState.Full;
 
+	public EngineState EngineState
+	{
+		get
+		{
+			return _engineState;
+		}
+		set
+		{
+			_engineState = value;
+			var ea = new EngineStateChangeEventArgs();
+			ea.EngineState = _engineState;
+			EngineStateChangeEvent?.Invoke(this, ea);
+		}
+	}
+	public event EventHandler<EngineStateChangeEventArgs> EngineStateChangeEvent;
+	public event EventHandler InitialBoostEvent;
+	
 	private float BackwardSpeed => speed * 0.7f;
 
-	[FormerlySerializedAs("MAX_STEERING_ANGLE")] [SerializeField]
-	private float maxSteeringAngle = 45;
-
-	[SerializeField] private List<AxleInfo> axles;
+	
 
 	private Rigidbody _rigidbody;
 	
@@ -70,7 +96,12 @@ public class Cart : MonoBehaviour
 		switch (_engineState)
 		{
 			case EngineState.Recharging:
-				_currentEnergy = Math.Min(_currentEnergy + energyRechargeRate, energySupply);
+				_currentEnergy += energyRechargeRate;
+				if (_currentEnergy >= energySupply)
+				{
+					_currentEnergy = energySupply;
+					_engineState = EngineState.Full;
+				}
 				break;
 			case EngineState.RechargeDelay:
 				if (--_rechargeDelayTimeout == 0)
@@ -88,6 +119,12 @@ public class Cart : MonoBehaviour
 					_engineState = EngineState.RechargeDelay;
 				}
 				break;
+		}
+
+		_rigidbody.AddRelativeTorque(Vector3.right * (_direction.y * aerialRotationForce));
+		if (!IsGrounded())
+		{
+			_rigidbody.AddRelativeTorque(Vector3.up * (_direction.x * aerialRotationForce));
 		}
 
 		var steering = _direction.x * maxSteeringAngle;
@@ -113,9 +150,18 @@ public class Cart : MonoBehaviour
 		}
 	}
 
+	public bool IsGrounded()
+	{
+		foreach (var axle in axles)
+		{
+			if (axle.LeftWheel.isGrounded || axle.RightWheel.isGrounded)
+				return true;
+		}
+		return false;
+	}
+	
 	public void OnBoost(InputAction.CallbackContext ctx)
 	{
-		Debug.Log(ctx.phase);
 		switch (ctx.phase)
 		{
 			case InputActionPhase.Canceled:
@@ -125,6 +171,7 @@ public class Cart : MonoBehaviour
 			case InputActionPhase.Started:
 				if (_currentEnergy > 0)
 				{
+					InitialBoostEvent?.Invoke(this, EventArgs.Empty);
 					_rigidbody.AddForce(
 						transform.TransformDirection(
 							initialBoostVector + Vector3.right * _direction.x * directionalBoostForce
@@ -138,6 +185,36 @@ public class Cart : MonoBehaviour
 		}
 	}
 
+	public float Speed => _rigidbody.velocity.magnitude;
+
+	public float CurrentEnergyRatio() => (float) _currentEnergy / energySupply;
+	
+	public float GetBackWheelSlip()
+	{
+		WheelCollider BL = axles[1].LeftWheel;
+		WheelCollider BR = axles[1].RightWheel;
+
+		if (!BL.isGrounded && !BR.isGrounded) return 0;
+
+		if (BL.GetGroundHit(out WheelHit hitLeft))
+		{
+			float leftSlip = Math.Abs(hitLeft.sidewaysSlip);
+			if (leftSlip > Math.Abs(BL.sidewaysFriction.extremumSlip))
+			{
+				return leftSlip;
+			}
+		}
+		if (BL.GetGroundHit(out WheelHit hitRight))
+		{
+			float slip = Math.Abs(hitRight.sidewaysSlip);
+			if (slip > Math.Abs(BR.sidewaysFriction.extremumSlip))
+			{
+				return slip;
+			}
+		}
+
+		return 0;
+	}
 }
 
 [Serializable]
@@ -164,5 +241,6 @@ public enum EngineState
 {
 	Boost,
 	RechargeDelay,
-	Recharging
+	Recharging,
+	Full
 }

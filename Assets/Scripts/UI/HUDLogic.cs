@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,12 +12,14 @@ namespace UI
         [SerializeField] private bool player2 = false;
         [SerializeField] private Cart cart;
 
+        private const string EnergyBarContainerName = "EnergyMeter";
         private const string EnergyBarName = "CurrentEnergy";
         private const string SpeedArrowName = "SpeedArrow";
         private const string SpeedLabelName = "SpeedLabel";
 
         private UIDocument _hudUIDocument;
 
+        private VisualElement _energyBarContainer;
         private VisualElement _energyBar;
         private VisualElement _arrow;
         private Label _speedLabel;
@@ -28,6 +31,7 @@ namespace UI
             _rand = new Random();
             
             _hudUIDocument = GetComponent<UIDocument>();
+            _energyBarContainer = _hudUIDocument.rootVisualElement.Q<VisualElement>(EnergyBarContainerName);
             _energyBar = _hudUIDocument.rootVisualElement.Q<VisualElement>(EnergyBarName);
             _arrow = _hudUIDocument.rootVisualElement.Q<VisualElement>(SpeedArrowName);
             _speedLabel = _hudUIDocument.rootVisualElement.Q<Label>(SpeedLabelName);
@@ -37,7 +41,12 @@ namespace UI
 
         private void OnInitialBoost(object sender, EventArgs e)
         {
-            
+            StartCoroutine(Shake(_energyBarContainer));
+        }
+
+        private IEnumerator Shake(VisualElement element)
+        {
+            yield return null;
         }
 
         private void FixedUpdate()

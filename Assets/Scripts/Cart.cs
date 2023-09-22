@@ -21,6 +21,8 @@ public class Cart : MonoBehaviour
 	private float speed = 80.0f;
 	[FormerlySerializedAs("MAX_STEERING_ANGLE")] [SerializeField]
 	private float maxSteeringAngle = 45;
+
+	[SerializeField] private float toughness = 20;
 	[SerializeField] private List<AxleInfo> axles;
 	[SerializeField] private float aerialRotationForce = 1000;
 	
@@ -72,17 +74,24 @@ public class Cart : MonoBehaviour
 
 	public void OnMove(InputAction.CallbackContext ctx)
 	{
+		if (_isDead) return;
 		_direction = ctx.ReadValue<Vector2>();
 	}
 	
 	public void OnReset(InputAction.CallbackContext ctx)
+	{
+		if (_isDead) return;
+		Reset();
+	}
+
+	private void Reset()
 	{
 		transform.position = ResetPosition;
 		transform.rotation = ResetRotation;
 		_rigidbody.velocity = Vector3.zero;
 		_rigidbody.angularVelocity = Vector3.zero;
 	}
-	
+
 	private void FixedUpdate()
 	{
 		//Debug.Log(_currentEnergy);
@@ -162,6 +171,7 @@ public class Cart : MonoBehaviour
 	
 	public void OnBoost(InputAction.CallbackContext ctx)
 	{
+		if (_isDead) return;
 		switch (ctx.phase)
 		{
 			case InputActionPhase.Canceled:
@@ -215,6 +225,61 @@ public class Cart : MonoBehaviour
 
 		return 0;
 	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			var otherVelocity = other.attachedRigidbody.velocity;
+
+			var normDistanceVector = (transform.position - other.transform.position).normalized;
+			
+			var collisionStrength = Vector3.Dot(otherVelocity, normDistanceVector);
+			if (collisionStrength > toughness)
+			{
+				Debug.LogWarning($"{name} goes boom!");
+				Die();
+			}
+		}
+	}
+
+	private bool _isDead = false;
+	
+	private void Die()
+	{
+		IEnumerator Coroutine()
+		{
+			float prevTimeScale = Time.timeScale;
+			Time.timeScale = 0.5f;
+			_isDead = true;
+			GetComponent<ParticleSystem>().Play();
+			var meshes = GetComponentsInChildren<MeshRenderer>();
+			for (int i = 0; i < 6; i++)
+			{
+				if (i == 1) Time.timeScale = prevTimeScale;
+				if (i == 4) Reset();
+				foreach (var meshRenderer in meshes)
+				{
+					meshRenderer.enabled = false;
+				}
+				yield return new WaitForSeconds(0.2f);
+				foreach (var meshRenderer in meshes)
+				{
+					meshRenderer.enabled = true;
+				}
+				yield return new WaitForSeconds(0.2f);
+			}
+			_isDead = false;
+		}
+
+		if (!_isDead)
+		{
+			StartCoroutine(Coroutine());
+			DeathEvent?.Invoke(this, EventArgs.Empty);
+		}
+	}
+
+	public event EventHandler DeathEvent;
 }
 
 [Serializable]

@@ -24,6 +24,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7fc006249533afa4f98a582715221703, type: 2}
+    - target: {fileID: 2518890589636006771, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518890589636006771, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.19833922
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518890589636006771, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2901193936750737074, guid: a07660392d3b79f4e926f673de7ac697, type: 3}
       propertyPath: m_Name
       value: Cart (1) Variant

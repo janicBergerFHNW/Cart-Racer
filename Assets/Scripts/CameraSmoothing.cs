@@ -13,30 +13,24 @@ public class CameraSmoothing : MonoBehaviour
     
     void FixedUpdate()
     {
-        bool isInWall = false;
         var targetPos = target.position
                         + target.TransformDirection(_offset);
-        var camera = GetComponent<Camera>();
-        var screenPos = camera.WorldToScreenPoint(target.transform.position);
-        var ray = camera.ScreenPointToRay(screenPos);
+        
+        // prevent camera clipping through walls / floors
         var rayOrigin = target.position + target.TransformDirection(_carOffset);
-        ray = new Ray(rayOrigin, targetPos - rayOrigin);
+        var ray = new Ray(rayOrigin, targetPos - rayOrigin);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Debug.DrawRay (ray.origin, ray.direction *  hit.distance, Color.yellow);
-            Debug.Log(hit.rigidbody?.tag);
-            if (hit.distance > _offset.magnitude && !hit.rigidbody.CompareTag("Player"))
+            if (hit.distance < _offset.magnitude)
             {
-                targetPos = ray.origin + ray.direction.normalized * (hit.distance * 0.9f);
-                isInWall = true;
+                targetPos = ray.origin + ray.direction.normalized * hit.distance;
             }
-               // transform.position += transform.TransformDirection(Vector3.forward);
         }
         Debug.DrawLine(transform.position, targetPos, Color.green);
         
         // Define a target position above and behind the target transform
         //Vector3 targetPosition = target.TransformPoint(_offset);
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref _velocity, isInWall ? smoothTime : smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref _velocity, smoothTime);
 
         // Smoothly move the camera towards that target position
         

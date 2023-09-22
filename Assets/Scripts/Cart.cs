@@ -8,6 +8,16 @@ using Random = UnityEngine.Random;
 
 public class Cart : MonoBehaviour
 {
+	public class InitialBoostEventArgs
+	{
+		public bool Success;
+
+		public InitialBoostEventArgs(bool success)
+		{
+			this.Success = success;
+		}
+	}
+
 	public class EngineStateChangeEventArgs
 	{
 		public EngineState EngineState;
@@ -55,7 +65,7 @@ public class Cart : MonoBehaviour
 		}
 	}
 	public event EventHandler<EngineStateChangeEventArgs> EngineStateChangeEvent;
-	public event EventHandler InitialBoostEvent;
+	public event EventHandler<InitialBoostEventArgs> InitialBoostEvent;
 	
 	private float BackwardSpeed => speed * 0.7f;
 
@@ -181,7 +191,7 @@ public class Cart : MonoBehaviour
 			case InputActionPhase.Started:
 				if (_currentEnergy > 0)
 				{
-					InitialBoostEvent?.Invoke(this, EventArgs.Empty);
+					InitialBoostEvent?.Invoke(this, new InitialBoostEventArgs(true));
 					_rigidbody.AddForce(
 						transform.TransformDirection(
 							initialBoostVector + Vector3.right * _direction.x * directionalBoostForce
@@ -190,6 +200,10 @@ public class Cart : MonoBehaviour
 					_rechargeDelayTimeout = energyRechargeDelay;
 					_engineState = _currentEnergy > 0 ? 
 						EngineState.Boost : EngineState.RechargeDelay;
+				}
+				else
+				{
+					InitialBoostEvent?.Invoke(this, new InitialBoostEventArgs(false));
 				}
 				break;
 		}

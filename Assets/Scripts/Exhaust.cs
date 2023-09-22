@@ -14,11 +14,14 @@ public class Exhaust : MonoBehaviour
         parent.InitialBoostEvent += OnInitialBoost;
     }
 
-    private void OnInitialBoost(object sender, EventArgs e)
+    private void OnInitialBoost(object sender, Cart.InitialBoostEventArgs e)
     {
-        foreach (var ps in initialBoostParticles)
+        if (e.Success)
         {
-            ps.Play();
+            foreach (var ps in initialBoostParticles)
+            {
+                ps.Play();
+            }
         }
     }
 

@@ -34,15 +34,15 @@ public class SceneUIManager : MonoBehaviour
     
     private void OnLeaveEditorMenu(object sender, EventArgs e)
     {
-        _tempTimeScale = Time.timeScale;
-        Time.timeScale = 1f;
+        Time.timeScale = _tempTimeScale;
         _cartEditorPanel.gameObject.SetActive(false);
         _overlayPanel.gameObject.SetActive(true);
     }
 
     private void OnEditCartButtonPressed(object sender, EventArgs e)
     {
-        Time.timeScale = _tempTimeScale;
+        _tempTimeScale = Time.timeScale;
+        Time.timeScale = 0;
         _overlayPanel.gameObject.SetActive(false);
         _cartEditorPanel.gameObject.SetActive(true);
     }

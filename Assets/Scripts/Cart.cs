@@ -259,7 +259,7 @@ public class Cart : MonoBehaviour
 
 	private bool _isDead = false;
 	
-	private void Die()
+	public void Die()
 	{
 		IEnumerator Coroutine()
 		{

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -17,7 +18,9 @@ namespace UI
         private const string EditCartButtonName = "EditCartButton";
         private const string QuitButtonName = "QuitButton";
 
-        //[SerializeField] private GameObject[] _previews;
+        [SerializeField] private Track[] trackPrefabs;
+
+        private Track[] _tracks;
         
         public event EventHandler EditCartButtonPressed;
 
@@ -30,27 +33,33 @@ namespace UI
 
         private void Awake()
         {
-            disablePreviews();
+            _tracks = trackPrefabs;
+            for (int i = 1; i < trackPrefabs.Length; i++)
+            {
+                _tracks[i].gameObject.SetActive(false);
+            }
         }
 
         private void OnEnable()
         {
             _mainMenuUIDocument = GetComponent<UIDocument>();
 
-            DropdownField dropdown = _mainMenuUIDocument.rootVisualElement.Q<DropdownField>();
-            
-//            _previews[dropdown.index].SetActive(true);
+            DropdownField dropdown = _mainMenuUIDocument.rootVisualElement.Q<DropdownField>(LevelSelectorName);
+            dropdown.choices = _tracks.Select(t => t.trackName).ToList();
+            dropdown.index = 0;
+            _tracks[0].gameObject.SetActive(true);
             dropdown.RegisterValueChangedCallback(v =>
             {
-                disablePreviews();
-//                _previews[dropdown.index].SetActive(true);
+                Debug.Log($"from {v.previousValue} to {v.newValue}");
+                _tracks.Where(t => t.trackName == v.previousValue).First().gameObject.SetActive(false);
+                _tracks.Where(t => t.trackName == v.newValue).First().gameObject.SetActive(true);
             });
             
 
             _mainMenuUIDocument.rootVisualElement.Q<Button>(StartButtonName).clicked += () =>
             {
                 Debug.Log("Start clicked");
-                int sceneIndex = _mainMenuUIDocument.rootVisualElement.Q<DropdownField>().index + 1;
+                int sceneIndex = dropdown.index + 1;
                 UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
             };
             
@@ -70,13 +79,5 @@ namespace UI
 #endif
             };
         }
-
-        private void disablePreviews()
-        {
-/*            foreach (var preview in _previews)
-            {
-                preview.SetActive(false);
-            }
-*/        }
     }
 }

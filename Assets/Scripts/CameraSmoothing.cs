@@ -9,7 +9,7 @@ public class CameraSmoothing : MonoBehaviour
     [SerializeField] private float rotationSpeed = 10F;
     private Vector3 _velocity = Vector3.zero;
     [SerializeField] private Vector3 _offset = new Vector3(0, 5, -10);
-    private Vector3 _carOffset = new Vector3(0, 2, -2);
+    private Vector3 _carOffset = new Vector3(0, 0, -1.2f);
     
     void FixedUpdate()
     {

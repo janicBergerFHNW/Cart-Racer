@@ -242,6 +242,7 @@ public class Cart : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
+		if (_isDead) return;
 		if (other.CompareTag("Player"))
 		{
 			var otherVelocity = other.attachedRigidbody.velocity;
@@ -251,11 +252,13 @@ public class Cart : MonoBehaviour
 			var collisionStrength = Vector3.Dot(otherVelocity, normDistanceVector);
 			if (collisionStrength > toughness)
 			{
-				Debug.LogWarning($"{name} goes boom!");
 				Die();
+				other.GetComponent<Cart>().KillCount += 1;
 			}
 		}
 	}
+	
+	public int KillCount { get; private set; }
 
 	private bool _isDead = false;
 	
@@ -285,12 +288,8 @@ public class Cart : MonoBehaviour
 			}
 			_isDead = false;
 		}
-
-		if (!_isDead)
-		{
-			StartCoroutine(Coroutine());
-			DeathEvent?.Invoke(this, EventArgs.Empty);
-		}
+		StartCoroutine(Coroutine());
+		DeathEvent?.Invoke(this, EventArgs.Empty);
 	}
 
 	public event EventHandler DeathEvent;

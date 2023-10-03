@@ -16,6 +16,7 @@ public class ItemBox : MonoBehaviour
     public event EventHandler<ItemBoxCollectedEventArgs> ItemBoxCollected;
 
     private ParticleSystem _ps;
+    private AudioSource _audioSource;
 
     [SerializeField] private List<PowerUp> powerUpPrefabs;
     
@@ -23,6 +24,7 @@ public class ItemBox : MonoBehaviour
     void Start()
     {
         _ps = GetComponentInChildren<ParticleSystem>();
+        _audioSource = _ps.GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -43,7 +45,9 @@ public class ItemBox : MonoBehaviour
         _ps.transform.parent = null;
         
         _ps.Play();
-        Destroy(_ps, 2);
+        _audioSource.Play();
+        Destroy(_ps, 1);
+        Destroy(_audioSource, 1);
         
         Destroy(gameObject);
     }

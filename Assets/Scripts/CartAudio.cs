@@ -16,6 +16,8 @@ public class CartAudio : MonoBehaviour
     [SerializeField] private AudioClip continuousBoostSfx;
     [SerializeField] private AudioClip stopBoostSfx;
     [SerializeField] private AudioClip failedBoostSfx;
+
+    [Header("Death")] [SerializeField] private AudioClip deathSfx;
     
     private Cart _cart;
     private AudioSource _engineSource;
@@ -25,7 +27,7 @@ public class CartAudio : MonoBehaviour
     private AudioSource _continuousBoostSource;
     private AudioSource _stopBoostSource;
     private AudioSource _failedBoostSource;
-    
+    private AudioSource _deathSource;
     
     // Start is called before the first frame update
     void Start()
@@ -70,6 +72,10 @@ public class CartAudio : MonoBehaviour
         _failedBoostSource.clip = failedBoostSfx;
         _failedBoostSource.loop = false;
         _failedBoostSource.volume = 0.4f;
+
+        _deathSource = gameObject.AddComponent<AudioSource>();
+        _deathSource.clip = deathSfx;
+        
         
         _cart = GetComponentInParent<Cart>();
         _cart.InitialBoostEvent += (sender, args) =>
@@ -82,6 +88,11 @@ public class CartAudio : MonoBehaviour
             {
                 _failedBoostSource.Play();
             }
+        };
+
+        _cart.DeathEvent += (_, _) =>
+        {
+            _deathSource.Play();
         };
     }
 

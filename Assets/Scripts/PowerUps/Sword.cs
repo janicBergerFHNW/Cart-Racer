@@ -1,15 +1,16 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace PowerUps
 {
     public class Sword : Summon
     {
-        // Start is called before the first frame update
         void Start()
         {
-           StartCoroutine(SwordSlash());
+            GetComponentInChildren<AudioSource>().transform.parent = null;
+            StartCoroutine(SwordSlash());
         }
 
         private IEnumerator SwordSlash()

@@ -5675,6 +5675,7 @@ MonoBehaviour:
   continuousBoostSfx: {fileID: 8300000, guid: 127bc2996f3643243afd83ce7ddea81c, type: 3}
   stopBoostSfx: {fileID: 8300000, guid: 14d20ffbd48c8654088ef7a7a6501a70, type: 3}
   failedBoostSfx: {fileID: 8300000, guid: 31c0fddcb00481d4b80ce41edc76ab5a, type: 3}
+  deathSfx: {fileID: 8300000, guid: b299c1b421638ff40afbb46d03c783c5, type: 3}
 --- !u!1 &5243407031335723956
 GameObject:
   m_ObjectHideFlags: 0

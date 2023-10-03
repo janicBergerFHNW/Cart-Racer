@@ -19,6 +19,7 @@ namespace UI
         private const string EnergyWarningName = "EnergyWarning";
         private const string WholeHalfContainerName = "Container";
         private const string KillCountLabelName = "KillCount";
+        private const string ItemViewName = "ItemView";
 
         private UIDocument _hudUIDocument;
 
@@ -29,6 +30,7 @@ namespace UI
         private VisualElement _container;
         private Label _speedLabel;
         private Label _killCountLabel;
+        private VisualElement _itemView;
 
         private Random _rand;
         
@@ -44,6 +46,7 @@ namespace UI
             _energyWarning = _hudUIDocument.rootVisualElement.Q<VisualElement>(EnergyWarningName);
             _container = _hudUIDocument.rootVisualElement.Q<VisualElement>(WholeHalfContainerName);
             _killCountLabel = _hudUIDocument.rootVisualElement.Q<Label>(KillCountLabelName);
+            _itemView = _hudUIDocument.rootVisualElement.Q<VisualElement>(ItemViewName);
             
             cart.InitialBoostEvent += OnInitialBoost;
             cart.DeathEvent += OnDeath;
@@ -111,6 +114,10 @@ namespace UI
 
         private void FixedUpdate()
         {
+            if (cart.PowerUp is null)
+                _itemView.style.backgroundImage = null;
+            else
+                _itemView.style.backgroundImage = new StyleBackground(cart.PowerUp.Icon);
             _killCountLabel.text = cart.KillCount.ToString();
             _energyBar.style.height = Length.Percent(cart.CurrentEnergyRatio() * 100);
             float speed = cart.Speed;

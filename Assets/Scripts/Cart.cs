@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using PowerUps;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -50,6 +53,9 @@ public class Cart : MonoBehaviour
 	private int _rechargeDelayTimeout;
 	private EngineState _engineState = EngineState.Full;
 
+	[CanBeNull] public PowerUp PowerUp { get; private set; }
+	[SerializeField] public Transform itemSpawn;
+
 	public EngineState EngineState
 	{
 		get
@@ -84,13 +90,13 @@ public class Cart : MonoBehaviour
 
 	public void OnMove(InputAction.CallbackContext ctx)
 	{
-		if (_isDead) return;
+		if (isDead) return;
 		_direction = ctx.ReadValue<Vector2>();
 	}
 	
 	public void OnReset(InputAction.CallbackContext ctx)
 	{
-		if (_isDead) return;
+		if (isDead) return;
 		Reset();
 	}
 
@@ -181,7 +187,7 @@ public class Cart : MonoBehaviour
 	
 	public void OnBoost(InputAction.CallbackContext ctx)
 	{
-		if (_isDead) return;
+		if (isDead) return;
 		switch (ctx.phase)
 		{
 			case InputActionPhase.Canceled:
@@ -242,7 +248,7 @@ public class Cart : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (_isDead) return;
+		if (isDead) return;
 		if (other.CompareTag("Player"))
 		{
 			var otherVelocity = other.attachedRigidbody.velocity;
@@ -258,9 +264,9 @@ public class Cart : MonoBehaviour
 		}
 	}
 	
-	public int KillCount { get; private set; }
+	public int KillCount { get; set; }
 
-	private bool _isDead = false;
+	public bool isDead = false;
 	
 	public void Die()
 	{
@@ -268,7 +274,7 @@ public class Cart : MonoBehaviour
 		{
 			float prevTimeScale = Time.timeScale;
 			Time.timeScale = 0.5f;
-			_isDead = true;
+			isDead = true;
 			GetComponent<ParticleSystem>().Play();
 			var meshes = GetComponentsInChildren<MeshRenderer>();
 			for (int i = 0; i < 6; i++)
@@ -286,13 +292,27 @@ public class Cart : MonoBehaviour
 				}
 				yield return new WaitForSeconds(0.2f);
 			}
-			_isDead = false;
+			isDead = false;
 		}
 		StartCoroutine(Coroutine());
 		DeathEvent?.Invoke(this, EventArgs.Empty);
 	}
 
 	public event EventHandler DeathEvent;
+
+	public void PickUpPowerUp(PowerUp powerUp)
+	{
+		PowerUp ??= powerUp;
+	}
+
+	public void OnPowerUpUsage(InputAction.CallbackContext ctx)
+	{
+		if (isDead) return;
+		if (ctx.phase != InputActionPhase.Started) return;
+		if (PowerUp == null) return;
+		PowerUp.OnUse(this);
+		PowerUp = null;
+	}
 }
 
 [Serializable]

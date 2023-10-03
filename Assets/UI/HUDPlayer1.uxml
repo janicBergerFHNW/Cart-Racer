@@ -18,6 +18,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="KillCount" style="position: absolute; -unity-text-align: upper-left; left: 50%; top: 0; right: auto; bottom: auto; -unity-font-style: bold; color: rgb(204, 204, 204); font-size: 66px; -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&apos;);" />
+            <ui:VisualElement name="ItemView" style="flex-grow: 1; position: absolute; border-left-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-top-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-top-width: 12px; border-right-width: 12px; border-bottom-width: 12px; border-left-width: 12px; border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; width: 160px; height: 160px; top: 50px; left: 100px; background-image: none;" />
         </ui:VisualElement>
         <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: column; width: 50%; align-items: flex-end; justify-content: center; flex-wrap: nowrap; position: relative; bottom: auto; transform-origin: center; scale: 1 1;" />
     </ui:VisualElement>

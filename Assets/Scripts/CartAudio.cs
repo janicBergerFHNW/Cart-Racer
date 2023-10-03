@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,10 +12,20 @@ public class CartAudio : MonoBehaviour
 
     [Header("Tires")] [SerializeField] private AudioClip tiresSquealing;
 
+    [Header("Boosters")] [SerializeField] private AudioClip initialBoostSfx;
+    [SerializeField] private AudioClip continuousBoostSfx;
+    [SerializeField] private AudioClip stopBoostSfx;
+    [SerializeField] private AudioClip failedBoostSfx;
+    
     private Cart _cart;
     private AudioSource _engineSource;
     private AudioSource _idleSource;
     private AudioSource _tiresSource;
+    private AudioSource _initialBoostSource;
+    private AudioSource _continuousBoostSource;
+    private AudioSource _stopBoostSource;
+    private AudioSource _failedBoostSource;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -22,24 +33,56 @@ public class CartAudio : MonoBehaviour
         _engineSource = gameObject.AddComponent<AudioSource>();
         _engineSource.clip = engineLow;
         _engineSource.loop = true;
-        _engineSource.volume = 0.5f;
+        _engineSource.volume = 0.1f;
         _engineSource.Play();
         _engineSource.Pause();
         
         _tiresSource = gameObject.AddComponent<AudioSource>();
         _tiresSource.clip = tiresSquealing;
         _tiresSource.loop = true;
-        _tiresSource.volume = 0.25f;
+        _tiresSource.volume = 0.1f;
         _tiresSource.Play();
         _tiresSource.Pause();
         
         _idleSource = gameObject.AddComponent<AudioSource>();
         _idleSource.clip = enginePurring;
         _idleSource.loop = true;
-        _idleSource.volume = 0.4f;
+        _idleSource.volume = 0.1f;
         _idleSource.Play();
 
+        _continuousBoostSource = gameObject.AddComponent<AudioSource>();
+        _continuousBoostSource.clip = continuousBoostSfx;
+        _continuousBoostSource.loop = true;
+        _continuousBoostSource.volume = 1f;
+        _continuousBoostSource.Play();
+
+        _stopBoostSource = gameObject.AddComponent<AudioSource>();
+        _stopBoostSource.clip = stopBoostSfx;
+        _stopBoostSource.loop = false;
+        _stopBoostSource.volume = 1f;
+
+        _initialBoostSource = gameObject.AddComponent<AudioSource>();
+        _initialBoostSource.clip = initialBoostSfx;
+        _initialBoostSource.loop = false;
+        _initialBoostSource.volume = 1f;
+
+        _failedBoostSource = gameObject.AddComponent<AudioSource>();
+        _failedBoostSource.clip = failedBoostSfx;
+        _failedBoostSource.loop = false;
+        _failedBoostSource.volume = 0.4f;
+        
         _cart = GetComponentInParent<Cart>();
+        _cart.InitialBoostEvent += (sender, args) =>
+        {
+            if (args.Success)
+            {
+                _initialBoostSource.Play();
+            }
+            else
+            {
+                _failedBoostSource.Play();
+            }
+        };
     }
 
     // Update is called once per frame
@@ -69,13 +112,30 @@ public class CartAudio : MonoBehaviour
             _engineSource.Pause();
         }
 
-        _engineSource.pitch = (1 + speed) * 0.1f;
+        _engineSource.pitch = Math.Min(1.5f, (1 + speed) * 0.1f);
 
+        if (_cart.EngineState == EngineState.Boost)
+        {
+            if (!_continuousBoostSource.isPlaying)
+            {
+                
+                Debug.Log("boost play");
+                _continuousBoostSource.Play();
+            }
+        }
+        else if (_continuousBoostSource.isPlaying)
+        {
+            Debug.Log("stop boost");
+            _continuousBoostSource.Stop();
+            _stopBoostSource.Play();
+        }
+        
         if (Time.timeScale == 0)
         {
             _engineSource.Pause();
             _idleSource.Pause();
             _tiresSource.Pause();
+            _continuousBoostSource.Pause();
         }
     }
 }

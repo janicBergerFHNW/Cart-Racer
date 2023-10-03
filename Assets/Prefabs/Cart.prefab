@@ -564,6 +564,7 @@ MonoBehaviour:
   continuousBoostEnergyConsumption: 1
   directionalBoostForce: 50000
   itemSpawn: {fileID: 5185823316592101071}
+  isDead: 0
 --- !u!65 &2829055599412893828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5670,8 +5671,9 @@ MonoBehaviour:
   enginePurring: {fileID: 8300000, guid: 1d53008065a965640a11cba2f1605a77, type: 3}
   engineLow: {fileID: 8300000, guid: 0f798ef8a94ae6f4084bbaa891d100c4, type: 3}
   tiresSquealing: {fileID: 8300000, guid: 69fbb18042111d44eb7f0616d0a7b07c, type: 3}
-  initialBoostSfx: {fileID: 8300000, guid: 01836e270d65e2f4e9000c82199bb9e7, type: 3}
-  continuousBoostSfx: {fileID: 8300000, guid: a78bca5da82e7cf4095d6066a93cf4c7, type: 3}
+  initialBoostSfx: {fileID: 8300000, guid: 6a8b6d14765e93448863e831fdb50e5e, type: 3}
+  continuousBoostSfx: {fileID: 8300000, guid: 127bc2996f3643243afd83ce7ddea81c, type: 3}
+  stopBoostSfx: {fileID: 8300000, guid: 14d20ffbd48c8654088ef7a7a6501a70, type: 3}
   failedBoostSfx: {fileID: 8300000, guid: 31c0fddcb00481d4b80ce41edc76ab5a, type: 3}
 --- !u!1 &5243407031335723956
 GameObject:

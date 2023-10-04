@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using PowerUps;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
@@ -276,7 +278,7 @@ public class Cart : MonoBehaviour
 			Time.timeScale = 0.5f;
 			isDead = true;
 			GetComponent<ParticleSystem>().Play();
-			var meshes = GetComponentsInChildren<MeshRenderer>();
+			var meshes = GetComponentsInChildren<MeshRenderer>().Where(m => m is not null && !m.IsDestroyed());
 			for (int i = 0; i < 6; i++)
 			{
 				if (i == 1) Time.timeScale = prevTimeScale;

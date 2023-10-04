@@ -64,9 +64,9 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+  - {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+  - {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
       textureDirection: 0
       scale: 1
   backTextureLayer:
-    material: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     settings:
       textureGenMode: 2
       textureDirection: 0
@@ -1026,7 +1026,7 @@ MonoBehaviour:
       textureDirection: 0
       scale: 1
   endTextureLayer:
-    material: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     settings:
       textureGenMode: 2
       textureDirection: 0
@@ -1038,7 +1038,7 @@ MonoBehaviour:
       textureDirection: 0
       scale: 1
   edgeTextureLayer:
-    material: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    material: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     settings:
       textureGenMode: 2
       textureDirection: 0

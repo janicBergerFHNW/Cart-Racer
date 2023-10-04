@@ -9,7 +9,9 @@ namespace PowerUps
     {
         void Start()
         {
-            GetComponentInChildren<AudioSource>().transform.parent = null;
+            var audioSource = GetComponentInChildren<AudioSource>();
+            audioSource.transform.parent = null;
+            Destroy(audioSource.gameObject, 2);
             StartCoroutine(SwordSlash());
         }
 

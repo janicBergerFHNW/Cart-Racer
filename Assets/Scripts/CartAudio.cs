@@ -130,13 +130,11 @@ public class CartAudio : MonoBehaviour
             if (!_continuousBoostSource.isPlaying)
             {
                 
-                Debug.Log("boost play");
                 _continuousBoostSource.Play();
             }
         }
         else if (_continuousBoostSource.isPlaying)
         {
-            Debug.Log("stop boost");
             _continuousBoostSource.Stop();
             _stopBoostSource.Play();
         }

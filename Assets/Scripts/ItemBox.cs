@@ -46,8 +46,8 @@ public class ItemBox : MonoBehaviour
         
         _ps.Play();
         _audioSource.Play();
-        Destroy(_ps, 1);
-        Destroy(_audioSource, 1);
+        Destroy(_ps.gameObject, 1);
+        Destroy(_audioSource.gameObject, 1);
         
         Destroy(gameObject);
     }

@@ -627,8 +627,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187412
+      value: -196354
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -693,8 +705,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187262
+      value: -196394
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -759,8 +787,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -40534
+      value: -196306
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -821,8 +861,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187332
+      value: -196406
       objectReference: {fileID: 0}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     - target: {fileID: 8664694124044907627, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: m_Name
       value: BorderTile_Curve
@@ -887,8 +943,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187292
+      value: -196534
       objectReference: {fileID: 0}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     - target: {fileID: 8664694124044907627, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: m_Name
       value: BorderTile_Curve
@@ -957,8 +1025,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187222
+      value: -196434
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1023,8 +1107,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187342
+      value: -196318
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1089,8 +1185,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187252
+      value: -196546
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1155,8 +1263,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187322
+      value: -196342
       objectReference: {fileID: 0}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: selectedPoints.Array.data[0].id
       value: 6
@@ -1241,8 +1361,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187362
+      value: -196510
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1307,8 +1439,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187372
+      value: -196458
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1373,8 +1521,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187392
+      value: -196482
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1439,8 +1603,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187232
+      value: -196498
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1505,8 +1681,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187242
+      value: -196418
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1571,8 +1763,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187352
+      value: -196382
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1637,8 +1845,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187382
+      value: -196330
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1703,8 +1923,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187402
+      value: -196522
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1769,8 +2001,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187302
+      value: -196370
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1831,8 +2079,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187272
+      value: -196470
       objectReference: {fileID: 0}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 6901802282740043335, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     - target: {fileID: 8664694124044907627, guid: d21fb467e0e450a4482d1983eb50de2d, type: 3}
       propertyPath: m_Name
       value: BorderTile_Curve
@@ -1905,7 +2169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: displayMeshCreatorId
-      value: -187282
+      value: -196446
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: textureCategoryExpanded
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
       propertyPath: advancedCategoryExpanded
@@ -1915,6 +2183,18 @@ PrefabInstance:
       propertyPath: thicknessSampler.constValue
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_endTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_backTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
+    - target: {fileID: 8556756021934488891, guid: 3cab75bf6c8963f47a34b4e2d35ada6f, type: 3}
+      propertyPath: old_edgeTextureLayer.material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a21475b7e34b324087dec1c984a74e1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

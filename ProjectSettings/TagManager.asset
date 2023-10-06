@@ -8,6 +8,7 @@ TagManager:
   - Preview
   - OnBoostStart
   - Reflector
+  - IgnoreCollision
   layers:
   - Default
   - TransparentFX

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Spin : MonoBehaviour
 {
-    [SerializeField] private Vector3 _rotation = new Vector3(0, 1, 0);
+    [SerializeField] protected Vector3 rotation = new Vector3(0, 1, 0);
     void FixedUpdate()
     {
-        transform.eulerAngles += _rotation;
+        transform.eulerAngles += rotation;
 
     }
 }

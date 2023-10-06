@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,71 +13,56 @@ namespace UI
 
     public class MainMenuUILogic : MonoBehaviour
     {
-        private const string LevelSelectorName = "LevelSelector";
+        private const string PreviousStageButtonName = "PreviousStageButton";
+        private const string NextStageButtonName = "NextStageButton";
         private const string StartButtonName = "StartButton";
-        private const string EditCartButtonName = "EditCartButton";
         private const string QuitButtonName = "QuitButton";
 
-        [SerializeField] private GameObject[] _previews;
-        
-        public event EventHandler EditCartButtonPressed;
+        [SerializeField] private Track[] tracks;
+        [SerializeField] private CameraLookAtSmoothing camera;
 
-        protected virtual void OnEditCartButtonPressed()
-        {
-            EditCartButtonPressed?.Invoke(this, EventArgs.Empty);
-        }
+        private int _i = 0;
+        private Button _startButton;
 
         private UIDocument _mainMenuUIDocument;
-
-        private void Awake()
-        {
-            disablePreviews();
-        }
 
         private void OnEnable()
         {
             _mainMenuUIDocument = GetComponent<UIDocument>();
 
-            DropdownField dropdown = _mainMenuUIDocument.rootVisualElement.Q<DropdownField>();
-            
-            _previews[dropdown.index].SetActive(true);
-            dropdown.RegisterValueChangedCallback(v =>
-            {
-                disablePreviews();
-                _previews[dropdown.index].SetActive(true);
-            });
-            
+            camera.target = tracks[_i].transform;
 
-            _mainMenuUIDocument.rootVisualElement.Q<Button>(StartButtonName).clicked += () =>
+            _startButton = _mainMenuUIDocument.rootVisualElement.Q<Button>(StartButtonName);
+            _startButton.clicked += () =>
             {
-                Debug.Log("Start clicked");
-                int sceneIndex = _mainMenuUIDocument.rootVisualElement.Q<DropdownField>().index + 1;
+                int sceneIndex = _i + 1;
                 UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
             };
             
-            _mainMenuUIDocument.rootVisualElement.Q<Button>(EditCartButtonName).clicked += () =>
+            _startButton.text = tracks[_i].trackName.ToUpper();
+            _mainMenuUIDocument.rootVisualElement.Q<Button>(PreviousStageButtonName).clicked += () =>
             {
-                Debug.Log("Edit clicked");
-                OnEditCartButtonPressed();
+                Debug.Log("prev");
+                _i = (_i - 1 + tracks.Length) % tracks.Length;
+                camera.target = tracks[_i].transform;
+                _startButton.text = tracks[_i].trackName.ToUpper();
+            };
+            _mainMenuUIDocument.rootVisualElement.Q<Button>(NextStageButtonName).clicked += () =>
+            {
+                Debug.Log("next");
+                _i = (_i + 1) % tracks.Length;
+                camera.target = tracks[_i].transform;
+                _startButton.text = tracks[_i].trackName.ToUpper();
             };
             
             _mainMenuUIDocument.rootVisualElement.Q<Button>(QuitButtonName).clicked += () =>
             {
-                Debug.Log("Quit clicked");
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
 #else
                 Application.Quit();
 #endif
             };
-        }
-
-        private void disablePreviews()
-        {
-            foreach (var preview in _previews)
-            {
-                preview.SetActive(false);
-            }
         }
     }
 }

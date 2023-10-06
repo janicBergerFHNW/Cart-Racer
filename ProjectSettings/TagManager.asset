@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Post
   - Preview
+  - OnBoostStart
+  - Reflector
+  - IgnoreCollision
   layers:
   - Default
   - TransparentFX

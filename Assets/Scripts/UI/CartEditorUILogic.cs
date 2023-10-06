@@ -12,7 +12,7 @@ public class CartEditorUILogic : MonoBehaviour
     private const string BackButtonName = "BackButton";
     private const string ConfirmButtonName = "ConfirmButton";
 
-    private event EventHandler LeaveEditorMenu;
+    public event EventHandler LeaveEditorMenu;
 
     protected virtual void OnLeaveEditorMenu()
     {
@@ -41,12 +41,12 @@ public class CartEditorUILogic : MonoBehaviour
         _cartEditorUIDocument.rootVisualElement.Q<Button>(BackButtonName).clicked += () =>
         {
             Debug.Log("back clicked");
-            Debug.Log($"power: {_power}, steering: {_steering}, weight: {_weight}");
             OnLeaveEditorMenu();
         };
         _cartEditorUIDocument.rootVisualElement.Q<Button>(ConfirmButtonName).clicked += () =>
         {
             Debug.Log("confirm clicked");
+            Debug.Log($"power: {_power}, steering: {_steering}, weight: {_weight}");
             OnLeaveEditorMenu();
         };
     }

@@ -1,18 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(164, 164, 164, 0.33);">
-        <ui:Label tabindex="-1" text="Cart Racer" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" enable-rich-text="true" style="align-items: stretch; align-self: center; font-size: 46px; -unity-font-style: bold;" />
-        <ui:VisualElement name="Center" style="flex-grow: 1; flex-direction: row; justify-content: space-around; margin-top: 25px; height: 351px;">
-            <ui:VisualElement style="flex-grow: 1;" />
-            <ui:VisualElement name="Content" style="flex-grow: 1; height: 180px;">
-                <ui:DropdownField label="Level" index="0" choices="Simple Track, Fancy Track" name="LevelSelector" />
-                <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartButton" />
-                <ui:Button text="Cart Editor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EditCartButton" />
-                <ui:Button text="Quit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitButton" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(164, 164, 164, 0.33); align-items: auto; justify-content: space-around; align-self: stretch; flex-direction: column;">
+        <ui:Label tabindex="-1" text="Cart Battler" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" enable-rich-text="true" style="align-items: stretch; align-self: center; font-size: 142px; -unity-font-style: bold;" />
+        <ui:VisualElement name="Center" style="flex-grow: 1; flex-direction: row; justify-content: space-around; margin-top: 25px; height: 865px;">
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="PreviousStageButton" style="background-image: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=7ce248a5a96f37e4b9418f07e84f1436&amp;type=3#arrow-left@2x&apos;); background-color: rgba(56, 56, 56, 0); -unity-background-image-tint-color: rgb(188, 188, 188); width: 119px; height: 414px; position: relative; top: 140px; bottom: auto; -unity-text-align: lower-center; white-space: nowrap; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content" style="flex-grow: 1; height: auto; flex-direction: column; align-items: stretch; justify-content: flex-end;">
+                <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartButton" style="font-size: 60px; -unity-font-style: bold; background-color: rgba(188, 188, 188, 0.27); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+                <ui:Button text="QUIT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitButton" style="background-image: none; font-size: 20px; background-color: rgba(195, 195, 195, 0.24); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="NextStageButton" style="background-image: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=7ce248a5a96f37e4b9418f07e84f1436&amp;type=3#arrow-right@2x&apos;); background-color: rgba(56, 56, 56, 0); -unity-background-image-tint-color: rgb(188, 188, 188); width: 119px; height: 414px; position: relative; top: 140px; bottom: auto; -unity-text-align: lower-center; white-space: nowrap; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         </ui:VisualElement>
-        <ui:VisualElement name="Footer" style="flex-grow: 1; justify-content: flex-end;">
-            <ui:Label tabindex="-1" text="v0.1" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+        <ui:VisualElement name="Footer" style="flex-grow: 1; justify-content: flex-end; height: auto;">
+            <ui:Label tabindex="-1" text="v0.5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

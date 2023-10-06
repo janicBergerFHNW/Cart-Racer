@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: column; width: 50%; align-items: flex-start; justify-content: center; flex-wrap: nowrap; position: relative; bottom: auto; transform-origin: center; scale: 1 1; align-self: auto; background-color: rgba(255, 0, 0, 0);">
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:VisualElement name="EnergyMeter" style="flex-grow: 1; height: 90%; width: 40px; margin-right: 10px; margin-left: 10px; margin-top: 50px; margin-bottom: 50px; background-color: rgb(149, 149, 149); flex-direction: column-reverse;">
+                    <ui:VisualElement name="CurrentEnergy" usage-hints="DynamicTransform" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-color: rgb(204, 204, 204);" />
+                    <ui:VisualElement name="EnergyWarning" usage-hints="DynamicTransform" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-color: rgba(255, 0, 0, 0);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; height: 30%; width: 100%; align-items: flex-end; justify-content: space-between; flex-direction: row; align-self: flex-end;">
+                <ui:VisualElement style="flex-grow: 1; width: 100%; height: 100%; position: absolute; flex-direction: column; margin-right: 0; margin-left: 5%; justify-content: space-between; align-self: flex-end;">
+                    <ui:VisualElement style="flex-grow: 1; position: absolute; width: 25%; height: 100%; background-image: url(&apos;project://database/Assets/UI/tacho.png?fileID=2800000&amp;guid=ee21f2275701a7c4998b3f9f4fa5de45&amp;type=3#tacho&apos;); -unity-background-image-tint-color: rgb(89, 89, 89);" />
+                    <ui:VisualElement name="SpeedArrow" usage-hints="DynamicTransform" style="flex-grow: 1; position: absolute; width: 50%; height: 200%; background-image: url(&apos;project://database/Assets/UI/tachoArrow.png?fileID=2800000&amp;guid=75547acc09e0fd6478912b4df68c77a1&amp;type=3#tachoArrow&apos;); -unity-background-image-tint-color: rgb(89, 89, 89); margin-left: 0; left: -21%; bottom: -77%; rotate: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: flex-end; justify-content: space-between; align-self: flex-end; width: 250px; min-width: 0; position: absolute;">
+                    <ui:Label tabindex="-1" text="0.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SpeedLabel" usage-hints="DynamicTransform" style="-unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&apos;); -unity-font-style: bold; font-size: 62px; color: rgb(214, 214, 214); margin-bottom: 15px; padding-right: 4px; margin-right: 4px; width: auto;" />
+                    <ui:Label tabindex="-1" text="KM/H" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(195, 195, 195); -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&apos;); font-size: 21px; -unity-font-style: bold; margin-bottom: 15px; -unity-text-align: upper-right;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="KillCount" style="position: absolute; -unity-text-align: upper-left; left: 50%; top: 0; right: auto; bottom: auto; -unity-font-style: bold; color: rgb(204, 204, 204); font-size: 66px; -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&apos;);" />
+            <ui:VisualElement name="ItemView" style="flex-grow: 1; position: absolute; border-left-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-top-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-top-width: 12px; border-right-width: 12px; border-bottom-width: 12px; border-left-width: 12px; border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; width: 160px; height: 160px; top: 50px; left: 100px; background-image: none;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: column; width: 50%; align-items: flex-end; justify-content: center; flex-wrap: nowrap; position: relative; bottom: auto; transform-origin: center; scale: 1 1;" />
+    </ui:VisualElement>
+</ui:UXML>

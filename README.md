@@ -19,7 +19,7 @@ Ein Score (Kill Count) wird angezeigt und die Spieler spielen so lange wie so Lu
 
 - Jump
 - Boost Pad
-- Cart / Char Select
+- Cart / Char Select: Nun habe ich recht mageres UI, ausser dem HUD.
 
 Feuerball Animation und rotierende Platform brauchte zuviel Zeit.
 Die Platform funktioniert immer noch nicht wie gewünscht.

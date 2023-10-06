@@ -12,6 +12,7 @@ namespace PowerUps
         // Start is called before the first frame update
         void Start()
         {
+            transform.parent = null;
             _rigidbody = GetComponent<Rigidbody>();
             var cartForwardVelocity = Vector3.Dot(User.transform.forward, User.GetComponent<Rigidbody>().velocity) * User.transform.forward;
             _rigidbody.velocity = cartForwardVelocity + User.transform.forward * speed;

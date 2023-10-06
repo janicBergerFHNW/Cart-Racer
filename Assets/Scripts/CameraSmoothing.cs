@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraSmoothing : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    [SerializeField] public Transform target;
     [SerializeField] private float smoothTime = 0.3F;
     [SerializeField] private float rotationSpeed = 10F;
     private Vector3 _velocity = Vector3.zero;
